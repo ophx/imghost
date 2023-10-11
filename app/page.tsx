@@ -4,6 +4,21 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 
 export default function Home() {
+  async function handleLogin(e: any) {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const response = await fetch("/api/login", { method: "POST", body: formData });
+    const data = await response.json();
+
+    if (data.type === "ERROR") {
+      toast.error(data.message);
+    } else {
+      toast.success(data.message);
+      // window.location.href = "/dashboard";
+    }
+  }
+
   async function handleRegister(e: any) {
     e.preventDefault();
 
@@ -59,7 +74,7 @@ export default function Home() {
       <div className="modal">
         <div className="modal-box bg-gray-900 rounded-lg shadow-lg">
           <p className="text-white text-2xl text-center">Login</p>
-          <div className="px-4 space-y-4">
+          <form onSubmit={handleLogin} className="px-4 space-y-4">
             <div>
               <p className="text-gray-300 uppercase text-sm">Username</p>
               <input required type="text" name="username" id="username" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
@@ -73,7 +88,7 @@ export default function Home() {
                 Submit
               </button>
             </div>
-          </div>
+          </form>
         </div>
         <label className="modal-backdrop" htmlFor="loginModal">Close</label>
       </div>
