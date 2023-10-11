@@ -15,8 +15,7 @@ export default function Home() {
       toast.error(data.message);
     } else {
       toast.success(data.message);
-      console.log(data.user);
-      // window.location.href = "/dashboard";
+      window.location.href = "/dashboard";
     }
   }
 

@@ -1,6 +1,6 @@
-import Sidebar from "@/components/Sidebar"
+import Sidebar from "@/components/Sidebar";
 
-export default function Dashboard() {
+export default async function Dashboard() {
     return (
         <>
             <div className="flex w-full">
