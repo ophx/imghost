@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 export default function Home() {
   async function handleRegister(e: any) {
@@ -10,7 +11,11 @@ export default function Home() {
     const response = await fetch("/api/register", { method: "POST", body: formData });
     const data = await response.json();
 
-    console.log(data);
+    if (data.type === "ERROR") {
+      toast.error(data.message);
+    } else {
+      toast.success(data.message);
+    }
   }
 
   return (
@@ -90,10 +95,6 @@ export default function Home() {
             <div>
               <p className="text-gray-300 uppercase text-sm">Confirm Password</p>
               <input required type="password" name="confirmPassword" id="confirmPassword" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
-            </div>
-            <div>
-              <p className="text-gray-300 uppercase text-sm">Invite Code</p>
-              <input required type="text" name="inviteCode" id="inviteCode" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
             </div>
             <div>
               <button type="submit" className="btn bg-blue-700 hover:bg-blue-700 text-white w-full">

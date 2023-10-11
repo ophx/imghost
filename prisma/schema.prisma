@@ -11,14 +11,6 @@ model User {
   id Int @id @default(autoincrement())
   username String @unique
   password String
-  invitedBy String
   role String @default("User")
   uuid String @default(uuid())
-}
-
-model Invites {
-  id Int @id @default(autoincrement())
-  code String @unique
-  usedBy String
-  used Boolean @default(false)
 }
