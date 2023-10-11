@@ -1,7 +1,16 @@
+import Sidebar from "@/components/Sidebar"
+
 export default function Dashboard() {
     return (
-        <div>
-            <p className="text-white text-2xl"></p>
-        </div>
+        <>
+            <div className="flex w-full">
+                {/* Sidebar */}
+                <Sidebar />
+
+                <div className="p-4">
+                    <p className="text-white">content</p>
+                </div>
+            </div>
+        </>
     )
 }
