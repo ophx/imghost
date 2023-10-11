@@ -15,5 +15,5 @@ model User {
   username String @unique
   password String
   invitedBy String
-  role String
+  role String @default("User")
 }
