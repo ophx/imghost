@@ -51,7 +51,7 @@ export default function Home() {
         <div className="hero-content text-center">
           <div className="max-w-md">
             <p className="text-white text-4xl">OphxHost</p>
-            <p className="text-gray-300 text-xl max-w-lg py-4">Private & secure image host for Discord, Revolt or any other chat app that supports embeds.</p>
+            <p className="text-gray-300 text-xl max-w-lg py-4">A secure image host for Discord, Revolt or any other chat app that supports embeds.</p>
             <label htmlFor="loginModal" className="btn btn-outline border-blue-600 hover:border-blue-700 hover:bg-blue-700 text-blue-600 hover:text-white mr-4">
               Login
             </label>
