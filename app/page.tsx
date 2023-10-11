@@ -1,6 +1,18 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Home() {
+  async function handleRegister(e: any) {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const response = await fetch("/api/register", { method: "POST", body: formData });
+    const data = await response.json();
+
+    console.log(data);
+  }
+
   return (
     <>
       {/* Navbar */}
@@ -45,14 +57,14 @@ export default function Home() {
           <div className="px-4 space-y-4">
             <div>
               <p className="text-gray-300 uppercase text-sm">Username</p>
-              <input type="text" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+              <input required type="text" name="username" id="username" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
             </div>
             <div>
               <p className="text-gray-300 uppercase text-sm">Password</p>
-              <input type="password" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+              <input required type="password" name="password" id="password" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
             </div>
             <div>
-              <button className="btn bg-blue-700 hover:bg-blue-700 text-white w-full">
+              <button type="submit" className="btn bg-blue-700 hover:bg-blue-700 text-white w-full">
                 Submit
               </button>
             </div>
@@ -66,29 +78,29 @@ export default function Home() {
       <div className="modal">
         <div className="modal-box bg-gray-900 rounded-lg shadow-lg">
           <p className="text-white text-2xl text-center">Register</p>
-          <div className="px-4 space-y-4">
+          <form onSubmit={handleRegister} className="px-4 space-y-4">
             <div>
               <p className="text-gray-300 uppercase text-sm">Username</p>
-              <input type="text" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+              <input required type="text" name="username" id="username" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
             </div>
             <div>
               <p className="text-gray-300 uppercase text-sm">Password</p>
-              <input type="password" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+              <input required type="password" name="password" id="password" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
             </div>
             <div>
               <p className="text-gray-300 uppercase text-sm">Confirm Password</p>
-              <input type="password" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+              <input required type="password" name="confirmPassword" id="confirmPassword" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
             </div>
             <div>
               <p className="text-gray-300 uppercase text-sm">Invite Code</p>
-              <input type="text" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+              <input required type="text" name="inviteCode" id="inviteCode" className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
             </div>
             <div>
-              <button className="btn bg-blue-700 hover:bg-blue-700 text-white w-full">
+              <button type="submit" className="btn bg-blue-700 hover:bg-blue-700 text-white w-full">
                 Submit
               </button>
             </div>
-          </div>
+          </form>
         </div>
         <label className="modal-backdrop" htmlFor="registerModal">Close</label>
       </div>
