@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    background-image: url(https://klar.gg/images/ellipse-main-blue.png);
+    background-image: url(/blue.png);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
