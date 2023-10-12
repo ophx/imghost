@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "OphxHost",
-  description: "Private & secure image host for Discord, Revolt or any other chat app that supports embeds.",
+  description: "A secure image host for Discord, Revolt or any other chat app that supports embeds.",
 }
 
 export default function RootLayout({
