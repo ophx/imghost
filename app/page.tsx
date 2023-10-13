@@ -72,7 +72,7 @@ export default function Home() {
       {/* Login Modal */}
       <input type="checkbox" id="loginModal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box bg-gray-900 rounded-lg shadow-lg">
+        <div className="modal-box bg-[#111] rounded-lg shadow-lg">
           <p className="text-white text-2xl text-center">Login</p>
           <form onSubmit={handleLogin} className="px-4 space-y-4">
             <div>
@@ -96,7 +96,7 @@ export default function Home() {
       {/* Register Modal */}
       <input type="checkbox" id="registerModal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box bg-gray-900 rounded-lg shadow-lg">
+        <div className="modal-box bg-[#111] rounded-lg shadow-lg">
           <p className="text-white text-2xl text-center">Register</p>
           <form onSubmit={handleRegister} className="px-4 space-y-4">
             <div>
