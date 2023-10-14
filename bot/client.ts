@@ -1,5 +1,6 @@
 require("dotenv").config();
 import { Client, REST, GatewayIntentBits, Routes, EmbedBuilder } from "discord.js";
+import moment from "moment";
 
 const client = new Client({
     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
@@ -46,18 +47,13 @@ client.on("interactionCreate", async (interaction) => {
         const user = await response.json();
 
         const embed = new EmbedBuilder()
-            .setColor("Grey")
             .setTitle("User Lookup")
-            .addFields(
-                {
-                    name: "Information",
-                    value: `\`\`\`ansi
+            .setDescription( `\`\`\`ansi
 [2;34m[ID][0m[2;31m[2;34m[0m[2;31m[0m ${user?.id}
 [2;34m[Username][0m[2;31m[2;34m[0m[2;31m[0m ${user?.username}
 [2;34m[Role][0m[2;31m[2;34m[0m[2;31m[0m ${user?.role}
-[2;34m[UUID][0m[2;31m[2;34m[0m[2;31m[0m ${user?.uuid}\`\`\``,
-                }
-            )
+[2;34m[UUID][0m[2;31m[2;34m[0m[2;31m[0m ${user?.uuid}
+[2;34m[Registered][0m[2;31m[2;34m[0m[2;31m[0m ${moment(user?.createdAt).calendar()}\`\`\``)
             .setTimestamp()
         
         interaction.reply({ content: "", embeds: [embed] });

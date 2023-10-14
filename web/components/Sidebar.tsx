@@ -15,6 +15,11 @@ export default function Sidebar() {
                             </Link>
                         </li>
                         <li>
+                            <Link href="/dashboard/account" className="transition-all duration-200 hover:bg-transparent text-gray-300 hover:text-blue-600">
+                                Account
+                            </Link>
+                        </li>
+                        <li>
                             <Link href="/dashboard" className="transition-all duration-200 hover:bg-transparent text-gray-300 hover:text-blue-600">
                                 Settings
                             </Link>
