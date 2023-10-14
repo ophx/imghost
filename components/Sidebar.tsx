@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Sidebar() {
@@ -21,22 +20,6 @@ export default function Sidebar() {
                             </Link>
                         </li>
                     </ul>
-                </div>
-                <div>
-                    <div className="bg-[#222] p-4 rounded-lg shadow-lg flex items-center">
-                        <div>
-                            <Image
-                                src="https://cdn.discordapp.com/avatars/459738097622712320/a_a3094d93bbc01dd74140e768abc59203.webp?size=4096"
-                                height={40}
-                                width={40}
-                                className="rounded-full shadow-lg mr-4"
-                                alt="ophx"
-                            />
-                        </div>
-                        <div>
-                            <p className="text-white">ophx</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

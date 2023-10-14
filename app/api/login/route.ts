@@ -20,6 +20,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
         const tokenData = {
             id: userFound.id,
+            username: userFound.username,
+            role: userFound.role,
             uuid: userFound.uuid,
         }
         const token = await jwt.sign(tokenData, "fd90s8329dfoisjkhoifd9009982jojsaojd", { expiresIn: "1d" });

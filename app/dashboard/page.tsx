@@ -1,6 +1,13 @@
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { decodeToken } from "@/utils/decodeToken";
 import Sidebar from "@/components/Sidebar";
 
 export default async function Dashboard() {
+    const token = String(cookies().get("token")?.value);
+    const user = decodeToken(token);
+    if (!user) redirect("/");
+
     return (
         <>
             <div className="flex w-full">
@@ -10,7 +17,7 @@ export default async function Dashboard() {
                 {/* Main */}
                 <div className="p-4 w-full space-y-4">
                     <div className="bg-[#111] rounded-lg shadow-lg p-4">
-                        <p className="text-gray-300 text-xl mb-4">Welcome back, ophx!</p>
+                        <p className="text-gray-300 text-xl mb-4">Welcome back, {user?.username}!</p>
                         <div className="grid grid-cols-3 gap-4">
                             <div className="bg-[#222] rounded-lg shadow-lg p-4">
                                 <div className="space-y-2">
