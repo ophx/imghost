@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import prisma from "@/prisma/prisma";
 import bcrypt from "bcrypt";
 
 export async function POST(req: NextRequest, res: NextResponse) {
@@ -8,13 +8,11 @@ export async function POST(req: NextRequest, res: NextResponse) {
     const password = formData.get("password")?.toString() as string;
     const confirmPassword = formData.get("confirmPassword")?.toString() as string;
 
-    const prisma = new PrismaClient();
     const userFound = await prisma.user.findFirst({
         where: {
             username: username,
         }
     });
-    await prisma.$disconnect();
 
     if (userFound) {
         return NextResponse.json({ type: "ERROR", message: "Username is already taken!" });
@@ -28,7 +26,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
                     password: hash,
                 }
             });
-            await prisma.$disconnect();
             return NextResponse.json({ type: "SUCCESS", message: "User created successfully!" });
         } else {
             return NextResponse.json({ type: "ERROR", message: "Passwords do not match!" });

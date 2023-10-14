@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import prisma from "@/prisma/prisma";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
@@ -8,13 +8,11 @@ export async function POST(req: NextRequest, res: NextResponse) {
     const username = formData.get("username")?.toString() as string;
     const password = formData.get("password")?.toString() as string;
 
-    const prisma = new PrismaClient();
     const userFound = await prisma.user.findFirst({
         where: {
             username: username,
         }
     });
-    await prisma.$disconnect();
 
     if (userFound) {
         const validPassword = await bcrypt.compare(password, userFound.password);

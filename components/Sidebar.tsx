@@ -8,7 +8,7 @@ export default function Sidebar() {
                 <div>
                     <ul className="space-y-4 text-base">
                         <li>
-                            <p className="text-gray-300">v0.0.0 &mdash; BetaTest</p>
+                            <p className="text-gray-300 text-center">v0.0.0 &mdash; BetaTest</p>
                         </li>
                         <li>
                             <Link href="/dashboard" className="transition-all duration-200 hover:bg-transparent text-gray-300 hover:text-blue-600">
