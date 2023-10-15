@@ -7,8 +7,8 @@ export default function Sidebar() {
     const pathname = usePathname();
 
     return (
-        <div className="w-64 min-h-screen">
-            <div className="h-full p-4 overflow-y-auto bg-[#111] shadow-lg flex flex-col justify-between">
+        <div className="w-80 min-h-screen p-4">
+            <div className="h-full p-4 overflow-y-auto bg-[#111] rounded-lg shadow-lg flex flex-col justify-between">
                 <div>
                     <ul className="space-y-4 text-base">
                         <li>
