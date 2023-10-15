@@ -26,7 +26,7 @@ export default async function Account() {
                         <p className="text-gray-300 text-xl mb-4">Account</p>
                         <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <p className="text-gray-300 uppercase text-sm">ID</p>
+                                <p className="text-gray-300 uppercase text-sm">UID</p>
                                 <input readOnly type="text" value={user?.id} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
                             <div>

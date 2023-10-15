@@ -46,17 +46,26 @@ client.on("interactionCreate", async (interaction) => {
         const response = await fetch(`http://localhost:3000/api/commands/lookup?key=${process.env.WEB_API_KEY}&id=${interaction.options.get("id")?.value?.toString()}`);
         const user = await response.json();
 
-        const embed = new EmbedBuilder()
+        if (user) {
+            const embed = new EmbedBuilder()
             .setTitle("User Lookup")
-            .setDescription( `\`\`\`ansi
-[1;2m[1;30m[ID][0m[0m ${user?.id}
+            .setDescription(`\`\`\`ansi
+[1;2m[1;30m[UID][0m[0m ${user?.id}
 [1;2m[1;30m[Username][0m[0m ${user?.username}
 [1;2m[1;30m[Role][0m[0m ${user?.role}
 [1;2m[1;30m[UUID][0m[0m ${user?.uuid}
 [1;2m[1;30m[Registered][0m[0m ${moment(user?.createdAt).calendar()}\`\`\``)
             .setTimestamp()
         
-        interaction.reply({ content: "", embeds: [embed] });
+            interaction.reply({ content: "", embeds: [embed] });
+        } else {
+            const embed = new EmbedBuilder()
+            .setTitle("User Lookup")
+            .setDescription("User was not found!")
+            .setTimestamp()
+        
+            interaction.reply({ content: "", embeds: [embed] });
+        }
     }
 });
 
