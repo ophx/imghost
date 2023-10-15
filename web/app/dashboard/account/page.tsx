@@ -21,23 +21,23 @@ export default async function Account() {
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <p className="text-gray-300 uppercase text-sm">ID</p>
-                                <input type="text" value={user?.id} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+                                <input readOnly type="text" value={user?.id} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
                             <div>
                                 <p className="text-gray-300 uppercase text-sm">Username</p>
-                                <input type="text" value={user?.username} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+                                <input readOnly type="text" value={user?.username} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
                             <div>
                                 <p className="text-gray-300 uppercase text-sm">Role</p>
-                                <input type="text" value={user?.role} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+                                <input readOnly type="text" value={user?.role} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
                             <div>
                                 <p className="text-gray-300 uppercase text-sm">UUID</p>
-                                <input type="text" value={user?.uuid} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+                                <input readOnly type="text" value={user?.uuid} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
                             <div>
                                 <p className="text-gray-300 uppercase text-sm">Registered</p>
-                                <input type="text" value={user?.createdAt} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+                                <input readOnly type="text" value={user?.createdAt} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
                         </div>
                     </div>
