@@ -5,7 +5,7 @@ import { decodeToken } from "@/utils/decodeToken";
 import Sidebar from "@/components/Sidebar";
 
 export const metadata: Metadata = {
-    title: "OphxHost | Account",
+    title: "OphxHost | Settings",
 }
 
 export default async function Account() {
