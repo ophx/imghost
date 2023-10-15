@@ -1,8 +1,13 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { Metadata } from "next";
 import moment from "moment";
 import { decodeToken } from "@/utils/decodeToken";
 import Sidebar from "@/components/Sidebar";
+
+export const metadata: Metadata = {
+    title: "OphxHost | Account",
+}
 
 export default async function Account() {
     const token = String(cookies().get("token")?.value);
