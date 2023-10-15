@@ -25,23 +25,23 @@ export default async function Account() {
                     <div className="bg-[#111] rounded-lg shadow-lg p-4">
                         <p className="text-gray-300 text-xl mb-4">Account</p>
                         <div className="grid grid-cols-2 gap-4">
-                            <div>
+                            <div className="space-y-2">
                                 <p className="text-gray-300 uppercase text-sm">UID</p>
                                 <input readOnly type="text" value={user?.id} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
-                            <div>
+                            <div className="space-y-2">
                                 <p className="text-gray-300 uppercase text-sm">Username</p>
                                 <input readOnly type="text" value={user?.username} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
-                            <div>
+                            <div className="space-y-2">
                                 <p className="text-gray-300 uppercase text-sm">Role</p>
                                 <input readOnly type="text" value={user?.role} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
-                            <div>
+                            <div className="space-y-2">
                                 <p className="text-gray-300 uppercase text-sm">UUID</p>
                                 <input readOnly type="text" value={user?.uuid} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
-                            <div>
+                            <div className="space-y-2">
                                 <p className="text-gray-300 uppercase text-sm">Registered</p>
                                 <input readOnly type="text" value={moment(user?.createdAt).calendar()} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
