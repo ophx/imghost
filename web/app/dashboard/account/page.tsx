@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import moment from "moment";
 import { decodeToken } from "@/utils/decodeToken";
 import Sidebar from "@/components/Sidebar";
 
@@ -37,7 +38,7 @@ export default async function Account() {
                             </div>
                             <div>
                                 <p className="text-gray-300 uppercase text-sm">Registered</p>
-                                <input readOnly type="text" value={user?.createdAt} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+                                <input readOnly type="text" value={moment(user?.createdAt).calendar()} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
                         </div>
                     </div>

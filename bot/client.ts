@@ -49,11 +49,11 @@ client.on("interactionCreate", async (interaction) => {
         const embed = new EmbedBuilder()
             .setTitle("User Lookup")
             .setDescription( `\`\`\`ansi
-[2;34m[ID][0m[2;31m[2;34m[0m[2;31m[0m ${user?.id}
-[2;34m[Username][0m[2;31m[2;34m[0m[2;31m[0m ${user?.username}
-[2;34m[Role][0m[2;31m[2;34m[0m[2;31m[0m ${user?.role}
-[2;34m[UUID][0m[2;31m[2;34m[0m[2;31m[0m ${user?.uuid}
-[2;34m[Registered][0m[2;31m[2;34m[0m[2;31m[0m ${moment(user?.createdAt).calendar()}\`\`\``)
+[1;2m[1;30m[ID][0m[0m ${user?.id}
+[1;2m[1;30m[Username][0m[0m ${user?.username}
+[1;2m[1;30m[Role][0m[0m${user?.role}
+[1;2m[1;30m[UUID][0m[0m ${user?.uuid}
+[1;2m[1;30m[Registered][0m[0m ${moment(user?.createdAt).calendar()}\`\`\``)
             .setTimestamp()
         
         interaction.reply({ content: "", embeds: [embed] });
