@@ -51,7 +51,7 @@ client.on("interactionCreate", async (interaction) => {
             .setDescription( `\`\`\`ansi
 [1;2m[1;30m[ID][0m[0m ${user?.id}
 [1;2m[1;30m[Username][0m[0m ${user?.username}
-[1;2m[1;30m[Role][0m[0m${user?.role}
+[1;2m[1;30m[Role][0m[0m ${user?.role}
 [1;2m[1;30m[UUID][0m[0m ${user?.uuid}
 [1;2m[1;30m[Registered][0m[0m ${moment(user?.createdAt).calendar()}\`\`\``)
             .setTimestamp()
