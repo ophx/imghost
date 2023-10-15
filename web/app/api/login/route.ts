@@ -24,6 +24,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
             role: userFound.role,
             uuid: userFound.uuid,
             createdAt: userFound.createdAt,
+            discordId: userFound.discordId,
+            discordUsername: userFound.discordUsername,
         }
         const token = await jwt.sign(tokenData, "fd90s8329dfoisjkhoifd9009982jojsaojd", { expiresIn: "1d" });
         const response = NextResponse.json({ type: "SUCCESS", message: "Logged in successfully!" });

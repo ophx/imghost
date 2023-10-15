@@ -14,4 +14,6 @@ model User {
   role String @default("User")
   uuid String @default(uuid())
   createdAt DateTime @default(now())
+  discordId String @default("")
+  discordUsername String @default("")
 }

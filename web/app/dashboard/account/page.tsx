@@ -45,6 +45,14 @@ export default async function Account() {
                                 <p className="text-gray-300 uppercase text-sm">Registered</p>
                                 <input readOnly type="text" value={moment(user?.createdAt).calendar()} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
+                            <div className="space-y-2">
+                                <p className="text-gray-300 uppercase text-sm">Discord ID</p>
+                                <input readOnly type="text" value={user?.discordId ? user?.discordId : "None"} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+                            </div>
+                            <div className="space-y-2">
+                                <p className="text-gray-300 uppercase text-sm">Discord Username</p>
+                                <input readOnly type="text" value={user?.discordUsername ? user?.discordUsername : "None"} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
+                            </div>
                         </div>
                     </div>
                 </div>

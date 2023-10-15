@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { Metadata } from "next";
 import { decodeToken } from "@/utils/decodeToken";
 import Sidebar from "@/components/Sidebar";
@@ -28,9 +29,17 @@ export default async function Account() {
                                 <p className="text-gray-300 text-xl">Account</p>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div>
-                                        <button className="btn bg-[#5865F2] hover:bg-[#5865F2] border-none text-white w-full">
+                                        {
+                                        user?.discordId
+                                        ?
+                                        <Link href="/api/link-discord" className="btn bg-[#5865F2] hover:bg-[#5865F2] border-none text-white w-full">
+                                            Relink Discord Account
+                                        </Link>
+                                        :
+                                        <Link href="/api/link-discord" className="btn bg-[#5865F2] hover:bg-[#5865F2] border-none text-white w-full">
                                             Link Discord Account
-                                        </button>
+                                        </Link>
+                                        }
                                     </div>
                                     <div>
                                         <button className="btn bg-blue-600 hover:bg-blue-700 border-none text-white w-full">
