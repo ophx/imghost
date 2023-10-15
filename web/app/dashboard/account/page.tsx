@@ -36,7 +36,7 @@ export default async function Account() {
                                 <input type="text" value={user?.uuid} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
                             <div>
-                                <p className="text-gray-300 uppercase text-sm">Created At</p>
+                                <p className="text-gray-300 uppercase text-sm">Registered</p>
                                 <input type="text" value={user?.createdAt} className="input input-bordered focus:outline-none bg-transparent placeholder-gray-300 text-gray-300 w-full" />
                             </div>
                         </div>

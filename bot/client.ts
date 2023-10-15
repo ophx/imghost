@@ -43,7 +43,7 @@ client.on("interactionCreate", async (interaction) => {
     if (!interaction.isChatInputCommand()) return;
 
     if (interaction.commandName === "lookup") {
-        const response = await fetch(`http://localhost:3000/api/commands/lookup?id=${interaction.options.get("id")?.value?.toString()}`);
+        const response = await fetch(`http://localhost:3000/api/commands/lookup?key=${process.env.WEB_API_KEY}&id=${interaction.options.get("id")?.value?.toString()}`);
         const user = await response.json();
 
         const embed = new EmbedBuilder()
