@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { decodeToken } from "@/utils/decodeToken";
 import Sidebar from "@/components/Sidebar";
 
