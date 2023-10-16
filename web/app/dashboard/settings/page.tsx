@@ -41,26 +41,6 @@ export default async function Settings() {
                                         </Link>
                                         }
                                     </div>
-                                    <div>
-                                        <button className="btn bg-blue-600 hover:bg-blue-700 border-none text-white w-full">
-                                            Change Username
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <button className="btn bg-blue-600 hover:bg-blue-700 border-none text-white w-full">
-                                            Change Password
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <button className="btn bg-red-600 hover:bg-red-700 border-none text-white w-full">
-                                            Delete Account
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <button className="btn bg-red-600 hover:bg-red-700 border-none text-white w-full">
-                                            Wipe Files
-                                        </button>
-                                    </div>
                                 </div>
                             </div>
                         </div>
