@@ -25,6 +25,11 @@ export default function Sidebar() {
                             </Link>
                         </li>
                         <li>
+                            <Link href="/dashboard/gallery" className={`transition-all duration-200 ${pathname == "/dashboard/gallery" ? "hover:bg-transparent text-blue-600" : "hover:bg-transparent text-gray-300 hover:text-blue-600"}`}>
+                                Gallery
+                            </Link>
+                        </li>
+                        <li>
                             <Link href="/dashboard/settings" className={`transition-all duration-200 ${pathname == "/dashboard/settings" ? "hover:bg-transparent text-blue-600" : "hover:bg-transparent text-gray-300 hover:text-blue-600"}`}>
                                 Settings
                             </Link>
