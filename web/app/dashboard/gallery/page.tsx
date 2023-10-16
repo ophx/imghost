@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "OphxHost | Gallery",
 }
 
-export default async function Account() {
+export default async function Gallery() {
     const token = String(cookies().get("token")?.value);
     const user = decodeToken(token);
     if (!user) redirect("/");
