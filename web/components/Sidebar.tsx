@@ -12,7 +12,8 @@ export default function Sidebar() {
                 <div>
                     <ul className="space-y-4 text-base">
                         <li>
-                            <p className="text-gray-300 text-center">v0.0.0 &mdash; BetaTest</p>
+                            <p className="text-white text-lg text-center">OphxHost</p>
+                            <p className="text-gray-300 text-center">Beta</p>
                         </li>
                         <li>
                             <Link href="/dashboard" className={`transition-all duration-200 ${pathname == "/dashboard" ? "hover:bg-transparent text-blue-600" : "hover:bg-transparent text-gray-300 hover:text-blue-600"}`}>
