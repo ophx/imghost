@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "OphxHost | Settings",
 }
 
-export default async function Account() {
+export default async function Settings() {
     const token = String(cookies().get("token")?.value);
     const user = decodeToken(token);
     if (!user) redirect("/");
